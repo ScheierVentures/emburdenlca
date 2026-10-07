@@ -1,0 +1,39 @@
+Package: emburdenlca
+Title: Life-Cycle Assessment Factor Service for the emburden Ecosystem
+Version: 0.1.0
+Authors@R:
+    person("Eric", "Scheier", , "info@emburden.org", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-6628-1389"))
+Description: Supply-chain + operational embodied-energy and embodied-emissions
+    factor service for the emburden ecosystem. Loads USEEIO v2 (US) and
+    EXIOBASE (global) input-output tables, serves per-sector emergy and
+    greenhouse-gas factors to the Phase 6 LCA attachment step of
+    emburdensynth, and provides ecoinvent / Brightway2 parity hooks for
+    process-based LCA. Spun out from emburdensynth so a single factor
+    service can be shared by every ecosystem consumer (household footprint
+    pipeline, Compute Carrying Capacity solver for hyperscale data-center
+    siting, global synthesis Joule-target manuscript).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    dplyr,
+    tidyr,
+    purrr,
+    stats,
+    rlang,
+    tibble,
+    stringr,
+    readr,
+    jsonlite,
+    arrow,
+    emburdengeo,
+    emburdenutil
+Suggests:
+    testthat (>= 3.0.0),
+    pymrio,
+    reticulate
+Config/testthat/edition: 3
+URL: https://emburden.org, https://github.com/ScheierVentures/emburdenlca
+BugReports: https://github.com/ScheierVentures/emburdenlca/issues
