@@ -72,6 +72,11 @@ load_useeio_v2 <- function(level = c("detail", "summary"),
          cache_path, "` and re-run.")
   }
 
+  # useeior::buildModel() calls as.environment("package:useeior") internally,
+  # which requires useeior to be attached (library()), not merely loaded via
+  # ::. Attach it once if needed; harmless if it is already attached.
+  suppressPackageStartupMessages(library(useeior))
+
   message("Building USEEIO v2 factor table from useeior::buildModel() — ",
           "this takes 2–5 min the first time per level.")
   m <- useeior::buildModel(model)
